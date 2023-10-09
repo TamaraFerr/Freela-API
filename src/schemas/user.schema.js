@@ -6,5 +6,5 @@ export const userSchema = Joi.object({
     password: Joi.string().min(3).required(),
     confirmPassword: Joi.string().min(3).required().valid(Joi.ref("password")),
     CPF: Joi.string().required(),
-    Cellphone: Joi.string().required()
-})
+    phone: Joi.string().required()
+});
