@@ -7,3 +7,7 @@ export function getUserByEmail(email){
 export function createUser(name, email, password, cpf, phone){
     return db.query(`INSERT INTO users (name, email, password, cpf, phone) VALUES ($1, $2, $3, $4, $5);`, [name, email, password, cpf, phone])
 }
+
+export function listUsersCats (tutorId) {
+    return db.query(`SELECT * FROM cats WHERE tutorId = $1;`, [tutorId])
+}
